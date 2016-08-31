@@ -7,11 +7,11 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
-    <content src="index.html" />
+    <content src="index-inappbrowser.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <plugin name="com.phonegap.plugins.childbrowser" spec="5.0.0" source="pgb" />
-<!-- <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />     -->
     <access origin="*" />
+    <allow-navigation href="*://*.baidu.com/*" />
+    <allow-navigation href="*://*.taobao.com/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -25,4 +25,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.4.0" />
 </widget>

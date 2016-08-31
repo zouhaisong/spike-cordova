@@ -38,7 +38,10 @@
     <body>
         <div class="app">
             <h1>Apache Cordova</h1>
-            <a href="http://baidu.com" onclick="window.plugins.childBrowser.openExternal('http://www.taobao.com');">百度</a>
+
+<hr/>
+            <a href="#" data-rel="external" onclick="navigator.app.loadUrl('http://www.taobao.com','_blank','toolbarposition=top,location=yes,closebuttoncaption=X,toolbar=yes');">baidu</a>
+<hr/>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>

@@ -18,3 +18,6 @@ $ cordova run browser
 
 http_proxy=http://10.18.0.254:3128 https_proxy=http://10.18.0.254:3128 cordova plugin add https://github.com/phonegap-build/ChildBrowser
 http_proxy=http://10.18.0.254:3128 https_proxy=http://10.18.0.254:3128 cordova plugin add https://github.com/phonegap-build/ChildBrowser
+
+
+inappbrowser

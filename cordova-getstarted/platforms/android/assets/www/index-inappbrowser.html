@@ -4,6 +4,7 @@
     <title>InAppBrowser.removeEventListener Example</title>
 
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
     <script type="text/javascript" charset="utf-8">
 
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -32,11 +33,15 @@
     }
 
     function onDeviceReady() {
-         iabRef = window.open('http://www.baidu.com', '_self', 'location=no');
-         iabRef.addEventListener('loadstart', iabLoadStart);
-         iabRef.addEventListener('loadstop', iabLoadStop);
-         iabRef.removeEventListener('loaderror', iabLoadError);
-         iabRef.addEventListener('exit', iabClose);
+      window.open = cordova.InAppBrowser.open;
+        $(".js_open_link").click(function(e){
+          e.preventDefault();
+          iabRef = window.open($(this).data("href"), '_self', 'toolbarposition=top,location=yes,closebuttoncaption=X,toolbar=yes');
+          iabRef.addEventListener('loadstart', iabLoadStart);
+          iabRef.addEventListener('loadstop', iabLoadStop);
+          iabRef.removeEventListener('loaderror', iabLoadError);
+          iabRef.addEventListener('exit', iabClose);
+        });
     }
 
     </script>
@@ -44,6 +49,10 @@
   <body>
     <div class="app">
         <h1>Apache Cordova</h1>
+
+        <a href="javascript:void(0);" data-href="http://taobao.com" class="js_open_link">淘宝</a>
+        <a href="javascript:void(0);" data-href="http://baidu.com" class="js_open_link">百度</a>
+
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
             <p class="event received">Device is Ready</p>
